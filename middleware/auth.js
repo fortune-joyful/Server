@@ -15,13 +15,13 @@ function authentication (req, res, next){
           next()
         }
         else{
-          next({ status: 401, message: 'Authentication Failed' })
+          throw { status: 401, message: 'Authentication Failed' }
         }
       })
       .catch(next)
   }
   catch(err) {
-    next({ status: 401, message: "err" })
+    next(err)
   }
 }
 
