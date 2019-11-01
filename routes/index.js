@@ -1,4 +1,7 @@
-const route = require('express').Router()
+const router = require('express').Router()
+const tarotRoute = require('./tarotRoute')
+
+router.use('/tarots', tarotRoute)
 
 
-module.exports = route
+module.exports = router
